@@ -60,5 +60,58 @@ public class PalindromeLinkedList {
         }
         return true;
     }
-    
+
+
+    public static boolean palindromeLinkedList(ListNode head) {
+        if (head == null) {
+            return false;
+        } else if (head.next == null) { // 只有一个节点
+            return true;
+        } else if (head.next.next == null) { // 只有两个节点。其实只有两个节点是，第一个节点就是左中点
+            return head.val == head.next.val;
+        }
+
+        // 找到链表的中点，两个节点同时出发，slow指针将来到中点或左中点
+        ListNode fast = head;
+        ListNode slow = head;
+        while (fast.next.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+
+        // 无论是中点还是左中点，以slow划分为左右两部分
+        // 反转右边的部分
+        ListNode pre = slow;
+        ListNode cur = slow.next;
+        slow.next = null;
+        while (cur != null) {
+            ListNode next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
+        }
+
+        // 经过反转之后，pre将来到最后一个节点的位置
+        ListNode tail = pre;
+
+        while (head != null && tail != null) { // 链表长度为奇数是最后一个比较的值是中点位置，也可以只判断(head != null)
+            if (head.val != tail.val) return false;
+            head = head.next;
+            tail = tail.next;
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        ListNode listNode = new ListNode(1);
+        listNode.next = new ListNode(2);
+        listNode.next.next = new ListNode(2);
+        listNode.next.next.next = new ListNode(1);
+
+        boolean b = palindromeLinkedListWithArray(listNode);
+        System.out.println(b);
+
+        boolean b1 = palindromeLinkedList(listNode);
+        System.out.println(b1);
+    }
 }
