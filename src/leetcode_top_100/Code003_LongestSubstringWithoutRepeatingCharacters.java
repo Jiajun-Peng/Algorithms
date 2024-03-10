@@ -8,6 +8,30 @@ import java.util.Map;
  */
 public class Code003_LongestSubstringWithoutRepeatingCharacters {
 
+    // 方案二，比第一种方案更早结束向左的遍历
+    public static int lengthOfLongestSubstringBetter(String s) {
+        if (s == null || s.isEmpty()) {
+            return 0;
+        }
+        char[] charArray = s.toCharArray();
+        Map<Integer, Integer> indexToLeftmostIndex = new HashMap<>(); // 用于保存以index结尾的子串最左的起始位置
+        indexToLeftmostIndex.put(0, 0);
+
+        int maxLength = 1;
+        for (int i = 1; i < charArray.length; i++) {
+            Integer preLeftmostStartIndex = indexToLeftmostIndex.get(i - 1);
+            char c = charArray[i];
+            int curLeftmostStartIndex = i;
+            for (int j = i - 1; j >= preLeftmostStartIndex; j--) { // 最左的位置不会比i - 1的最左起始位置更左，及时停止遍历
+                if (charArray[j] == c) break;
+                curLeftmostStartIndex = j; // 记录左边第一个等于当前位置的值
+            }
+            indexToLeftmostIndex.put(i, curLeftmostStartIndex);
+            maxLength = Math.max(maxLength, i - curLeftmostStartIndex + 1);
+        }
+        return maxLength;
+    }
+
     public static int lengthOfLongestSubstring(String s) {
         if (s == null || s.isEmpty()) {
             return 0;
