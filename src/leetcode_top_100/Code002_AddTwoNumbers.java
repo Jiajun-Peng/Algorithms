@@ -25,7 +25,7 @@ https://leetcode.cn/problems/add-two-numbers/
 0 <= Node.val <= 9
 题目数据保证列表表示的数字不含前导零
  */
-public class Code2_AddTwoNumbers {
+public class Code002_AddTwoNumbers {
 
     /*
     根据题意，链表的头节点是整数的个位，那么相加时，正好从头开始遍历两个链表进行相加操作
