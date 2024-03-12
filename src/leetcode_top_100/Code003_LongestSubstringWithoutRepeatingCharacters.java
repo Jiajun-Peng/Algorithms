@@ -1,5 +1,6 @@
 package leetcode_top_100;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,6 +8,30 @@ import java.util.Map;
 [3. 无重复字符的最长子串](https://leetcode.cn/problems/longest-substring-without-repeating-characters/)
  */
 public class Code003_LongestSubstringWithoutRepeatingCharacters {
+
+    public static int lengthOfLongestSubstringBetter1(String s) {
+        if (s == null || s.isEmpty()) {
+            return 0;
+        }
+
+        // 最近一次出现某一字符的位置,因为字符的ascii码的编码值就是数字，所以可以使用组的某一下标的位置代表对应的字符
+        // 记录最近一次出现某一字符的位置，就代表当前字符最左可到达的位置之一，可以避免再次循环找向左找第一个等于当前字符的位置
+        int[] charLastVisitIndex = new int[128];
+        Arrays.fill(charLastVisitIndex, -1);
+
+        char[] charArray = s.toCharArray();
+        int preLeftmostIndex = -1; // 上一个位置（i - 1）位置结尾的子串的起始位置
+        int maxLength = 1;
+        for (int i = 0; i < charArray.length; i++) {
+            char c = charArray[i];
+            int curLeftmostIndex = Math.max(preLeftmostIndex, charLastVisitIndex[c]); //大的值排在右边，也就是从后向前找到的最左
+            int curLength = i - curLeftmostIndex;
+            charLastVisitIndex[c] = i; // 记录当前c字符最佳一次出现的位置
+            preLeftmostIndex = curLeftmostIndex;
+            maxLength = Math.max(curLength, maxLength);
+        }
+        return maxLength;
+    }
 
     // 方案二，比第一种方案更早结束向左的遍历
     public static int lengthOfLongestSubstringBetter(String s) {
@@ -58,7 +83,7 @@ public class Code003_LongestSubstringWithoutRepeatingCharacters {
     }
 
     public static void main(String[] args) {
-        int length = lengthOfLongestSubstring("abcabcbb");
+        int length = lengthOfLongestSubstringBetter1("pwwkew");
         System.out.println(length);
     }
 }
