@@ -19,11 +19,16 @@ int getMin() 获取堆栈中的最小元素。
 -231 <= val <= 231 - 1
 pop、top 和 getMin 操作总是在 非空栈 上调用
 push, pop, top, and getMin最多被调用 3 * 104 次
+
+
+解题思路：
+    使用一个min字段保存当前的最小值，并使用栈保存加入元素与min差值
+    那么，当栈的值弹出时，只要计算min和差值的关系就可以得到原始的值
  */
 public class MinStackNoSpace {
 
     private Stack<Long> stack;
-    private int min;
+    private long min;
 
     public MinStackNoSpace() {
         stack = new Stack<>();
@@ -34,7 +39,7 @@ public class MinStackNoSpace {
             stack.push(0L);
             min = val;
         } else {
-            long diff = val - min;
+            long diff = (long) val - min; // 负数-正数可能产生溢出，所以用long
             stack.push(diff);
             // 因为可能diff < 0，所以可能val < min
             min = Math.min(val, min);
@@ -44,7 +49,7 @@ public class MinStackNoSpace {
     public void pop() {
         long diff = stack.pop();
         if (diff < 0) {
-            min = (int) ((long) min - diff); // diff < 0说明val比min小，所以上一步的min = min - diff
+            min = min - diff; // diff < 0说明val比min小，所以上一步的min = min - diff，即栈中的原始弹出时，需要同步将min值还原
         }
     }
 
@@ -54,34 +59,6 @@ public class MinStackNoSpace {
     }
 
     public int getMin() {
-        return min;
-    }
-
-    public static void main(String[] args) {
-        /*
-        ["MinStack","push","push","push","top","pop","getMin","pop","getMin","pop","push","top","getMin","push","top","getMin","pop","getMin"]
-[[],[2147483646],[2147483646],[2147483647],[],[],[],[],[],[],[2147483647],[],[],[-2147483648],[],[],[],[]]
-         */
-        MinStackNoSpace minStack = new MinStackNoSpace();
-        minStack.push(2147483646);
-        minStack.push(2147483646);
-        minStack.push(2147483647);
-
-        System.out.println(minStack.top());
-        minStack.pop();
-        System.out.println(minStack.getMin());
-        minStack.pop();
-
-        System.out.println(minStack.getMin());
-        minStack.pop();
-        minStack.push(2147483647);
-        System.out.println(minStack.top());
-
-        System.out.println(minStack.getMin());
-        minStack.push(-2147483648);
-        System.out.println(minStack.top());
-        System.out.println(minStack.getMin());
-        minStack.pop();
-        System.out.println(minStack.getMin());
+        return (int) min;
     }
 }
