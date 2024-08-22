@@ -5,7 +5,7 @@ package linked_list_stack_queue;
 
 实现add和poll方法
  */
-public class DoubleLinkedListImplementQueue {
+public class C02_DoubleLinkedListImplementQueue {
 
     public static class ListNode {
         int val;

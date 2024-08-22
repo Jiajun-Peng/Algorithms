@@ -21,16 +21,16 @@ pop、top 和 getMin 操作总是在 非空栈 上调用
 push, pop, top, and getMin最多被调用 3 * 104 次
 
 
-解题思路：
+不使用额外空间解题思路：
     使用一个min字段保存当前的最小值，并使用栈保存加入元素与min差值
     那么，当栈的值弹出时，只要计算min和差值的关系就可以得到原始的值
  */
-public class MinStackNoSpace {
+public class C04_2_GetMinStackNoSpace {
 
     private Stack<Long> stack;
     private long min;
 
-    public MinStackNoSpace() {
+    public C04_2_GetMinStackNoSpace() {
         stack = new Stack<>();
     }
 

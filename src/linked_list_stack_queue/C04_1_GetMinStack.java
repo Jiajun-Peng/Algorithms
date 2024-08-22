@@ -20,12 +20,12 @@ int getMin() 获取堆栈中的最小元素。
 pop、top 和 getMin 操作总是在 非空栈 上调用
 push, pop, top, and getMin最多被调用 3 * 104 次
  */
-public class MinStack {
+public class C04_1_GetMinStack {
 
     private Stack<Integer> dataStack;
     private Stack<Integer> minStack;
 
-    public MinStack() {
+    public C04_1_GetMinStack() {
         dataStack = new Stack<>();
         minStack = new Stack<>();
     }
@@ -60,7 +60,7 @@ public class MinStack {
     }
 
     public static void main(String[] args) {
-        MinStack minStack1 = new MinStack();
+        C04_1_GetMinStack minStack1 = new C04_1_GetMinStack();
         minStack1.push(-2);
         minStack1.push(0);
         minStack1.push(-3);

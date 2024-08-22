@@ -22,7 +22,7 @@ isFull(): 检查循环队列是否已满。
 请不要使用内置的队列库。
 
  */
-public class ArrayImplementCircularQueue {
+public class C03_ArrayImplementCircularQueue {
 
     public static class MyCircularQueue {
 
