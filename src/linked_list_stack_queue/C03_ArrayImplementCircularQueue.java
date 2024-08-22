@@ -1,10 +1,9 @@
 package linked_list_stack_queue;
 
 /*
-使用数组实现循环队列
-[622. 设计循环队列](https://leetcode-cn.com/problems/design-circular-queue/)
-https://leetcode.com/problems/design-circular-queue/
+622. 设计循环队列：https://leetcode-cn.com/problems/design-circular-queue
 
+使用数组实现循环队列
 你的实现应该支持如下操作：
 
 MyCircularQueue(k): 构造器，设置队列长度为 k 。

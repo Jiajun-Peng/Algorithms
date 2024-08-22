@@ -3,23 +3,9 @@ package linked_list_stack_queue;
 import java.util.Stack;
 
 /*
-[155. 最小栈](https://leetcode-cn.com/problems/min-stack/)
+155. 最小栈：https://leetcode-cn.com/problems/min-stack
 
-设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。
-
-实现 MinStack 类:
-
-MinStack() 初始化堆栈对象。
-void push(int val) 将元素val推入堆栈。
-void pop() 删除堆栈顶部的元素。
-int top() 获取堆栈顶部的元素。
-int getMin() 获取堆栈中的最小元素。
-
-提示：
--231 <= val <= 231 - 1
-pop、top 和 getMin 操作总是在 非空栈 上调用
-push, pop, top, and getMin最多被调用 3 * 104 次
-
+题目简介同上题
 
 不使用额外空间解题思路：
     使用一个min字段保存当前的最小值，并使用栈保存加入元素与min差值
