@@ -2,10 +2,12 @@ package sort;
 
 import java.util.Arrays;
 
-/**
- * https://leetcode.cn/problems/sort-an-array/
- * 插入排序
- * 将某个数插入到已排序序列中
+/*
+912. 排序数组：https://leetcode.cn/problems/sort-an-array
+
+插入排序
+将某个数插入到已排序序列中
+
  */
 public class C02_InsertionSort {
     public static void sort(int[] arr) {

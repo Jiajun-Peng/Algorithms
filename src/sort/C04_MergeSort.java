@@ -2,13 +2,18 @@ package sort;
 
 import java.util.Arrays;
 
-/**
- * https://leetcode.cn/problems/sort-an-array/
- * 归并排序
- * 采用分治的思想:
- *  1.将左边部分排序
- *  2.将右边部分排序
- *  3.将两边的有序序列再合并起来，使得整体有序
+/*
+912. 排序数组：https://leetcode.cn/problems/sort-an-array
+
+归并排序
+采用分治的思想:
+ 将一个数组分成两部分，分别对两部分进行排序，然后将两部分合并起来
+    递归实现
+    1. 递归地将数组分成两部分，直到数组的长度为1时，天然有序
+    2. 将两个有序的数组合并成一个有序的数组
+    3. 递归地将数组合并成一个有序的数组
+    4. 递归的终止条件是数组的长度为1
+
  */
 public class C04_MergeSort {
 

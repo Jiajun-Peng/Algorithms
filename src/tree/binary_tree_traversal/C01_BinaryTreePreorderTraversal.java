@@ -5,12 +5,12 @@ import java.util.List;
 import tree.TreeNode;
 
 /*
+144. 二叉树的前序遍历：https://leetcode-cn.com/problems/binary-tree-preorder-traversal
+
 二叉树的前序遍历
-[144. 二叉树的前序遍历](https://leetcode-cn.com/problems/binary-tree-preorder-traversal/)
-https://leetcode.com/problems/binary-tree-preorder-traversal/
 
  */
-public class BinaryTreePreorderTraversal {
+public class C01_BinaryTreePreorderTraversal {
 
     // 前序遍历
     public List<Integer> preorderTraversal(TreeNode root) {

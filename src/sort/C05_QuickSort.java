@@ -2,13 +2,17 @@ package sort;
 
 import java.util.Arrays;
 
-/**
- * https://leetcode.cn/problems/sort-an-array/
- * 快排
- * 快排也采用了分治的思想，通过先确定某个中间位置的数M的位置，将中间位置的数作为分界点（先排序好中间位置的数），把序列分为小于M的部分和大于M的部分
- * 再分别将左边部分排好序和右边部分排好序最后即可整体有序
+/*
+912. 排序数组：https://leetcode.cn/problems/sort-an-array
+
+快速排序
+快排也采用了分治的思想：
+通过先确定某个中间位置的数 M 的位置，将中间位置的数作为分界点（先排序好中间位置的数），
+把序列分为小于 M 的部分和大于 M 的部分
+再分别将左边部分排好序和右边部分排好序最后即可整体有序
+
  */
-public class QuickSort {
+public class C05_QuickSort {
 
     public static void sort(int[] arr) {
         if (arr == null || arr.length < 2) {

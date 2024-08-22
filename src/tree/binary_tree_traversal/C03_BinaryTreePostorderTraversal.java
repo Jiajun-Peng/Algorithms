@@ -5,12 +5,12 @@ import java.util.List;
 import tree.TreeNode;
 
 /*
+145. 二叉树的后序遍历：https://leetcode-cn.com/problems/binary-tree-postorder-traversal
+
 二叉树的后序遍历
-[145. 二叉树的后序遍历](https://leetcode-cn.com/problems/binary-tree-postorder-traversal/)
-https://leetcode.com/problems/binary-tree-postorder-traversal/
 
  */
-public class BinaryTreePostorderTraversal {
+public class C03_BinaryTreePostorderTraversal {
 
     // 后序遍历
     public List<Integer> postorderTraversal(TreeNode root) {
