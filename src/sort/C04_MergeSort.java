@@ -10,7 +10,7 @@ import java.util.Arrays;
  *  2.将右边部分排序
  *  3.将两边的有序序列再合并起来，使得整体有序
  */
-public class MergeSort {
+public class C04_MergeSort {
 
     public static void sort(int[] arr) {
         if (arr == null || arr.length < 2) {

@@ -1,13 +1,13 @@
 package linked_list;
 
 /*
-    [141. 环形链表（判断一条单链表是否有环）](https://leetcode-cn.com/problems/linked-list-cycle/)
+    141. 环形链表（判断一条单链表是否有环）: https://leetcode-cn.com/problems/linked-list-cycle
     给定一个链表，判断链表中是否有环。
 
     解题思路：
         使用快慢指针，快指针每次走两步，慢指针每次走一步，在有环的情况下，入环后快慢指针一定会在环中位置相遇。
  */
-public class IsLinkedListCycle {
+public class C07_1_IsLinkedListCycle {
 
     public static class ListNode {
         int val;

@@ -7,7 +7,7 @@ import java.util.Map;
 /*
 [3. 无重复字符的最长子串](https://leetcode.cn/problems/longest-substring-without-repeating-characters/)
  */
-public class Code003_LongestSubstringWithoutRepeatingCharacters {
+public class C03_LongestSubstringWithoutRepeatingCharacters {
 
     public static int lengthOfLongestSubstringBetter1(String s) {
         if (s == null || s.isEmpty()) {

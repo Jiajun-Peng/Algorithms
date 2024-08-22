@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
-    [234. 回文链表](https://leetcode.cn/problems/palindrome-linked-list/)
+    234. 回文链表：https://leetcode.cn/problems/palindrome-linked-list
     请判断一个链表是否为回文链表。
 
     回文的性质：无论是从头遍历到尾，还是从尾遍历到头，遍历到的节点的值组成的序列都是一样的。
@@ -30,7 +30,7 @@ import java.util.List;
 
      注意：当需要返回原链表时，需要将方案二中的链表反转还原
  */
-public class PalindromeLinkedList {
+public class C06_PalindromeLinkedList {
 
     public static class ListNode {
         int val;

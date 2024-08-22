@@ -20,7 +20,7 @@ package dp;
  *
  * 以下的暴力递归解法中包含重复计算的过程，重复计算的参数只与cur和restStep有关，所以可以将cur和restStep的组合参数的结果缓存起来
  */
-public class RobotToTarget {
+public class C02_RobotWalkToTarget {
     // 暴力递归实现
     public static int f(int n, int target, int start, int restStep) {
         if (restStep == 0) {

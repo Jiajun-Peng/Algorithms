@@ -2,11 +2,11 @@ package linked_list;
 
 /*
     反转单向链表
-    [92. 反转链表ii](https://leetcode.cn/problems/reverse-linked-list-ii/)
+    92. 反转链表ii: https://leetcode.cn/problems/reverse-linked-list-ii
 
     反转指定范围内的链表
  */
-public class ReverseLinkedListWithRange {
+public class C01_ReverseLinkedListWithRange {
 
     public static class ListNode {
         public int value;

@@ -18,7 +18,7 @@ import java.util.List;
               已知数组的(arr.size()-1) / 2得到的是数组的中点或左中点的位置
               数组的arr.size() / 2得到的是数组的中点或右中点的位置。
  */
-public class LinkedListMid {
+public class C05_LinkedListMid {
 
     public static class ListNode {
         public int val;

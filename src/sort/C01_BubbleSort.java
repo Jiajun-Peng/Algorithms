@@ -7,7 +7,7 @@ import java.util.Arrays;
  * 冒泡排序
  * 将未排序序列中大的数逐步向后放置，从后往前逐步确定好
  */
-public class BubbleSort {
+public class C01_BubbleSort {
 
     public static void sort(int[] arr) {
         if (arr == null || arr.length < 2) {

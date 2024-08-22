@@ -4,7 +4,7 @@ package linked_list;
 /*
     反转双向链表
  */
-public class ReverseDoubleLinkedList {
+public class C02_ReverseDoubleLinkedList {
 
     public static class ListNode {
         public int value;

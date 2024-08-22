@@ -7,7 +7,7 @@ import java.util.Arrays;
  * 插入排序
  * 将某个数插入到已排序序列中
  */
-public class InsertionSort {
+public class C02_InsertionSort {
     public static void sort(int[] arr) {
         if (arr == null || arr.length < 2) {
             return;

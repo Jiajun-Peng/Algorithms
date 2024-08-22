@@ -3,7 +3,7 @@ package linked_list;
 /*
 
 删除链表中的节点
-[LCR 136. 删除链表的节点](https://leetcode.cn/problems/shan-chu-lian-biao-de-jie-dian-lcof/)
+LCR 136. 删除链表的节点：https://leetcode.cn/problems/shan-chu-lian-biao-de-jie-dian-lcof
 
 给定单向链表的头指针和一个要删除的节点的值，定义一个函数删除该节点。
 
@@ -27,7 +27,7 @@ package linked_list;
 若使用 C 或 C++ 语言，你不需要 free 或 delete 被删除的节点
 
  */
-public class DeleteNodeWithHead {
+public class C03_DeleteNodeWithHead {
 
     public static class ListNode {
         public int val;

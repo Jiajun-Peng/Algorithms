@@ -1,7 +1,7 @@
 package linked_list;
 
 /*
-[142. 环形链表 II（环单链表的入环节点）](https://leetcode-cn.com/problems/linked-list-cycle-ii/)
+142. 环形链表 II（环单链表的入环节点）: https://leetcode-cn.com/problems/linked-list-cycle-ii
 
 给定一个链表，返回链表开始入环的第一个节点。 如果链表无环，则返回 null。
 
@@ -15,7 +15,7 @@ package linked_list;
     通过简化这个等式，我们可以得到`D = n(S1 + S2) - S1`。
     在`n`等于`1`的情况下`D = S2`，即从起点到入环点的距离等于从相遇点到入环点的距离。所以他们会在入环点相遇。
  */
-public class IsLinkedListCycleAndLoopEntry {
+public class C07_2_IsLinkedListCycleAndLoopEntry {
 
     public static class ListNode {
         int val;

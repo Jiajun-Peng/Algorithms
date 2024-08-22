@@ -20,7 +20,7 @@ package linked_list;
         删除链表的节点，一般是通过将待删除节点的前一个节点的next指针指向待删除节点的后一个节点
         但是，这里并不能访问到待删除节点的前一个节点，所以只能使用后面的值来覆盖要删除的节点
  */
-public class DeleteNodeNoHead {
+public class C04_DeleteNodeNoHead {
 
     public static class ListNode {
         public int val;

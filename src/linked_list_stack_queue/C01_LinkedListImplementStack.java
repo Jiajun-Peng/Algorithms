@@ -17,7 +17,7 @@ boolean empty() 如果栈是空的，返回 true ；否则，返回 false 。
 提示：
 1 <= x <= 9
  */
-public class LinkedListImplementStack {
+public class C01_LinkedListImplementStack {
 
     static class MyStack {
 

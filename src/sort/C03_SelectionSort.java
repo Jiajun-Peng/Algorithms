@@ -7,7 +7,7 @@ import java.util.Arrays;
  * 选择排序
  * 从未排序序列中找个最小的数，放置到已排序（升序）序列的后一位，得以形成更长一位的有序序列，直至所有元素都有序
  */
-public class SelectionSort {
+public class C03_SelectionSort {
 
     public static void sort(int[] arr) {
         if (arr == null || arr.length < 2) {

@@ -1,12 +1,10 @@
 package linked_list;
 
-import java.util.List;
-
 /*
     反转单向链表
-    [206. 反转链表](https://leetcode-cn.com/problems/reverse-linked-list/)
+    206. 反转链表：https://leetcode-cn.com/problems/reverse-linked-list
  */
-public class ReverseLinkedList {
+public class C01_ReverseLinkedList {
 
     public static class ListNode {
         public int value;

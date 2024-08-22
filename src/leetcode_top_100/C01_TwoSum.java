@@ -32,7 +32,7 @@ https://leetcode.com/problems/two-sum/
 进阶：你可以想出一个时间复杂度小于 O(n2) 的算法吗？
 
  */
-public class Code001_TwoSum {
+public class C01_TwoSum {
 
     /**
      * 从头遍历每一个数a，并从a的后一个位置开始找到另一个数b，直到a+b=target。
