@@ -10,7 +10,7 @@ import tree.TreeNode;
 二叉树的前序遍历
 
  */
-public class C01_BinaryTreePreorderTraversal {
+public class C01_PreorderTraversal {
 
     // 前序遍历
     public List<Integer> preorderTraversal(TreeNode root) {

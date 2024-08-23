@@ -10,7 +10,7 @@ import tree.TreeNode;
 二叉树的后序遍历
 
  */
-public class C03_BinaryTreePostorderTraversal {
+public class C03_PostorderTraversal {
 
     // 后序遍历
     public List<Integer> postorderTraversal(TreeNode root) {

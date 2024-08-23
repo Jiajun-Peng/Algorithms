@@ -10,7 +10,7 @@ import tree.TreeNode;
 二叉树的中序遍历
 
  */
-public class C02_BinaryTreeInorderTraversal {
+public class C02_InorderTraversal {
 
     // 中序遍历
     public List<Integer> inorderTraversal(TreeNode root) {
