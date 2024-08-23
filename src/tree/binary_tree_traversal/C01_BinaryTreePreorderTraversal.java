@@ -14,10 +14,10 @@ public class C01_BinaryTreePreorderTraversal {
 
     // 前序遍历
     public List<Integer> preorderTraversal(TreeNode root) {
-        if (root == null) { // 递归终止条件
-            return new ArrayList<>();
-        }
         List<Integer> result = new ArrayList<>();
+        if (root == null) { // 递归终止条件
+            return result;
+        }
         List<Integer> leftResult = preorderTraversal(root.left); // 递归遍历左子树
         List<Integer> rightResult = preorderTraversal(root.right);// 递归遍历右子树
 

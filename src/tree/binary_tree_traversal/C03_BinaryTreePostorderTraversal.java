@@ -14,10 +14,10 @@ public class C03_BinaryTreePostorderTraversal {
 
     // 后序遍历
     public List<Integer> postorderTraversal(TreeNode root) {
-        if (root == null) { // 递归终止条件
-            return new ArrayList<>();
-        }
         List<Integer> result = new ArrayList<>();
+        if (root == null) { // 递归终止条件
+            return result;
+        }
         List<Integer> leftResult = postorderTraversal(root.left); // 递归遍历左子树
         List<Integer> rightResult = postorderTraversal(root.right); // 递归遍历右子树
 
