@@ -3,23 +3,42 @@ package dp;
 /*
   剑指 Offer 10- I. 斐波那契数列：https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof
 
-  斐波拉契数列是这样一个数列：0、1、1、2、3、5、8、13、21、34、……
-  在数学上，斐波那契数列以如下递推的方法定义：F(0)=0，F(1)=1, F(n)=F(n - 1)+F(n - 2)（n ≥ 2，n ∈ N*）。
-
-
-  在暴力递归法中包含很多重复过程，比如：f(7) = f(6) + f(5),但是f(6) = f(5) + f(4),这里面f(5)的计算过程就重复了两次。
-  当n越大时，重复的次数就越多。为了避免计算重复值，可以将中间计算过程缓存起来，这就是动态规划。
-
-  当使用缓存时，计算f(n)时的时间复杂度时O(n)
+  注意，Leetcode 中要求：答案需要取模 1e9+7(1000000007) ，如计算初始结果为：1000000008，请返回 1。
  */
 public class C01_Fibonacci {
-    public int f(int n) {
+    public int fib(int n) {
         if (n == 0) {
             return 0;
         }
         if (n == 1) {
             return 1;
         }
-        return f(n - 1) + f(n - 2);
+        return fib(n - 1) + fib(n - 2);
+    }
+
+    // 使用缓存优化递归的解法
+    public int fibWithCache(int n) {
+        if (n < 2) return n;
+        int[] cache = new int[n + 1];
+        cache[0] = 0;
+        cache[1] = 1;
+        return fibWithCache(n, cache);
+    }
+    private int fibWithCache(int n, int[] cache) {
+        if (n < 2 || cache[n] != 0) return cache[n];
+        cache[n] = (fibWithCache(n - 1, cache) + fibWithCache(n - 2, cache));
+        return cache[n];
+    }
+
+    // 使用动态规划的解法
+    public int fibDp(int n) {
+        if (n < 2) return n;
+        int[] dp = new int[n + 1];
+        dp[0] = 0;
+        dp[1] = 1;
+        for (int i = 2; i <= n; i++) {
+            dp[i] = (dp[i - 1] + dp[i - 2]);
+        }
+        return dp[n];
     }
 }
