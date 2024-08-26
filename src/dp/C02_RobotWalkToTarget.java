@@ -57,9 +57,6 @@ public class C02_RobotWalkToTarget {
         return result;
     }
 
-    /*
-        因为最终的结果依赖于 start 和 restStep 的组合参数，这就是一个二维表,可以将 start 作为纵坐标、restStep 作为横坐标
-     */
     public static int walkWithDp(int n, int target, int start, int restStep) {
         if (n < 2 || target < 1 || target > n || start < 1 || start > n || restStep < 1) {
             return 0;
@@ -69,13 +66,14 @@ public class C02_RobotWalkToTarget {
         // 根据尝试暴力递归过程，我们知道，当已经处于目标位置，且 restStep == 0 时，
         dp[target][0] = 1; // 当已经处于目标位置时，剩余步数不为 0 的位置默认都是0
 
-        // 依赖的过程是从左向右、从上到下
-        for (int restIndex = 1; restIndex <= restStep; restIndex++) {
-            dp[1][restIndex] = dp[2][restIndex - 1];
-            for (int j = 2; j < n; j++) {
-                dp[j][restIndex] = dp[j - 1][restIndex - 1] + dp[j + 1][restIndex - 1];
+        // 剩余步数从 1 开始，逐步推导出剩余步数为 restStep 时的结果
+        for (int rest = 1; rest <= restStep; rest++) {
+            // 每次设置一个位置的值，只与前一个 rest 的值有关，所以这个循环内代码的顺序并不影响结果
+            dp[1][rest] = dp[2][rest - 1];
+            dp[n][rest] = dp[n - 1][rest - 1];
+            for (int cur = 2; cur < n; cur++) {
+                dp[cur][rest] = dp[cur - 1][rest - 1] + dp[cur + 1][rest - 1];
             }
-            dp[n][restIndex] = dp[n - 1][restIndex - 1];
         }
         return dp[start][restStep];
     }
