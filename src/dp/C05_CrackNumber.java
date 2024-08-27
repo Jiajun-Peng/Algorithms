@@ -20,12 +20,10 @@ public class C05_CrackNumber {
         int single = crackNumber(charArray, index + 1);
 
         int dual = 0;
-        if ((index + 1 < charArray.length) && (charArray[index] > '0' && charArray[index + 1] <= '5')) { // 以当前位置为起始，后面至少还有一位，可以与当前位置组成双数
-//            int tensPlace = Integer.parseInt(String.valueOf(charArray[index]));
+        if ((index + 1 < charArray.length)) { // 以当前位置为起始，后面至少还有一位，可以与当前位置组成双数
             int tensPlace = charArray[index] - '0'; // 0~9 的数字字符在 ascii 码表的值是 48 ~ 57
-            if (tensPlace != 0) { // 双数不能以 0 开始
-//                int unitsPlace = Integer.parseInt(String.valueOf(charArray[index + 1]));
-                int unitsPlace = charArray[index + 1] - '0';
+            int unitsPlace = charArray[index + 1] - '0';
+            if (tensPlace > 0 && tensPlace <= 2) { // 双数不能以 0 开始
                 int num = tensPlace * 10 + unitsPlace;
                 if (num <= 25) { // 字母的范围是 0 ~ 25
                     dual = crackNumber(charArray, index + 2);
