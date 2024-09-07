@@ -13,7 +13,7 @@ import java.util.Arrays;
 public class C17_PartitionEqualSubsetSum {
 
     public static int partitionSum(int[] nums) {
-        if (nums == null || nums.length == 0) {
+        if (nums == null || nums.length < 2) {
             return 0;
         }
         int sum = Arrays.stream(nums).sum();
@@ -25,14 +25,14 @@ public class C17_PartitionEqualSubsetSum {
         if (index == nums.length) {
             return 0;
         }
-        int notChosen = partitionSumByRecursive(nums, index + 1, rest);
+        int notChosenSum = partitionSumByRecursive(nums, index + 1, rest);
 
-        int chosen = 0;
+        int chosenSum = 0;
         if (nums[index] <= rest) {
-            chosen = nums[index] + partitionSumByRecursive(nums, index + 1, rest - nums[index]);
+            chosenSum = nums[index] + partitionSumByRecursive(nums, index + 1, rest - nums[index]);
         }
         // notChosen 和 chosen 都不会大于 rest
-        return Math.max(notChosen, chosen); // 最接近的就是其中值更大的那个
+        return Math.max(notChosenSum, chosenSum); // 最接近的就是其中值更大的那个
     }
 
     private static int partitionSumByDp(int[] nums) {
@@ -49,13 +49,13 @@ public class C17_PartitionEqualSubsetSum {
 
         for (int index = nums.length - 1; index >= 0; index--) {
             for (int rest = 0; rest <= halfSum; rest++) {
-                int notChosen = dp[index + 1][rest];
-                int chosen = 0;
+                int notChosenSum = dp[index + 1][rest];
+                int chosenSum = 0;
                 if (nums[index] <= rest) {
-                    chosen = nums[index] + dp[index + 1][rest - nums[index]];
+                    chosenSum = nums[index] + dp[index + 1][rest - nums[index]];
                 }
                 // notChosen 和 chosen 都不会大于 rest
-                dp[index][rest] = Math.max(notChosen, chosen); // 最接近的就是其中值更大的那个
+                dp[index][rest] = Math.max(notChosenSum, chosenSum); // 最接近的就是其中值更大的那个
             }
         }
         return dp[0][halfSum];
