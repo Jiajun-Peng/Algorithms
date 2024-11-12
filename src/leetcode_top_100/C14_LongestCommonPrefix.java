@@ -1,5 +1,7 @@
 package leetcode_top_100;
 
+// [14. 最长公共前缀](https://leetcode.cn/problems/longest-common-prefix/)
+
 public class C14_LongestCommonPrefix {
     public String longestCommonPrefix(String[] strs) {
         if (strs.length == 0 || strs[0].isEmpty()) return "";
